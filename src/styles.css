@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
+
+/* Custom global styles for a dark theme */
+:root {
+  --background-color: #0d0d0d;
+  --text-color: #f8f8f2;
+  --highlight-color: #ff79c6;
+  --primary-color: #8be9fd;
+  --secondary-color: #bd93f9;
+  --tertiary-color: #50fa7b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Fira Code', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* For code-like styling */
+.code-text {
+  font-family: 'Fira Code', monospace;
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
+
+.tertiary {
+  color: var(--tertiary-color);
+}
