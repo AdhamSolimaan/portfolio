@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <div class="container mx-auto px-4 py-24">
       <div class="flex flex-col items-center mb-16">
@@ -85,14 +88,14 @@ import { Component } from '@angular/core';
 
           <div class="code-text text-sm md:text-base leading-relaxed">
             <div class="mb-4">
-              <span class="text-secondary-color">const</span> <span class="text-primary-color">sendMessage</span> = <span class="text-secondary-color">async</span> () => {{'{'}
+              <span class="text-secondary-color">const</span> <span class="text-primary-color">sendMessage</span> = <span class="text-secondary-color">async</span> () => {{'{'}}
             </div>
 
             <div class="ml-4 mb-8">
-              <span class="text-highlight-color">await</span> <span class="text-tertiary-color">fetch</span>(<span class="text-primary-color">'https://api.example.com/contact'</span>, {{'{'}
+              <span class="text-highlight-color">await</span> <span class="text-tertiary-color">fetch</span>(<span class="text-primary-color">'https://api.example.com/contact'</span>, {{'{'}}
               <div class="ml-4">
                 <span class="text-primary-color">method</span>: <span class="text-tertiary-color">'POST'</span>,<br>
-                <span class="text-primary-color">body</span>: <span class="text-tertiary-color">JSON.stringify</span>({{'{'}
+                <span class="text-primary-color">body</span>: <span class="text-tertiary-color">JSON.stringify</span>({{'{'}}
                 <div class="ml-4">
                   <span class="text-primary-color">name</span>: <span class="text-tertiary-color">yourName</span>,<br>
                   <span class="text-primary-color">email</span>: <span class="text-tertiary-color">yourEmail</span>,<br>

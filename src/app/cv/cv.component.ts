@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cv',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <div class="container mx-auto py-16">
       <div class="bg-black bg-opacity-50 p-8 rounded-lg text-text-color">

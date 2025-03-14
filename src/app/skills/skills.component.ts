@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <div class="container mx-auto px-4 py-24">
       <div class="flex flex-col items-center mb-16">
