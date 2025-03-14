@@ -157,7 +157,7 @@ export class AboutComponent {
       console.log('About - Trying absolute path...');
       // Get the base URL of the application
       const baseUrl = window.location.origin;
-      imgElement.src = `${baseUrl}/assets/images/profile.jpg`;
+      imgElement.src = `${baseUrl}/portfolio/assets/images/profile.jpg`;
     }
   }
 }

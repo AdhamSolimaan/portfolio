@@ -270,7 +270,7 @@ export class HomeComponent implements OnInit {
       console.log('Trying absolute path...');
       // Get the base URL of the application
       const baseUrl = window.location.origin;
-      imgElement.src = `${baseUrl}/assets/images/profile.jpg`;
+      imgElement.src = `${baseUrl}/portfolio/assets/images/profile.jpg`;
     }
   }
 } 
