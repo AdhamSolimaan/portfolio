@@ -8,8 +8,8 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="container mx-auto px-4 py-24">
       <div class="flex flex-col items-center mb-16">
-        <div class="code-line text-secondary-color mb-4 text-xl opacity-70">04 // Get In Touch</div>
-        <h2 class="text-4xl font-bold mb-4 text-highlight-color">Contact /></h2>
+        <div  class="code-line text-secondary-color mb-4 text-xl opacity-70"></div>
+        <h2 class="text-4xl font-bold mb-4 text-highlight-color">Contact </h2>
         <p class="text-center max-w-2xl text-lg opacity-80 mb-8">
           Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
         </p>

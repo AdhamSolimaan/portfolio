@@ -1,10 +1,10 @@
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section animate-fade-in">
   <div class="hero-content">
-    <div class="hero-text">
-      <div class="code-line text-secondary-color mb-4 text-xl opacity-70">01 // Introduction</div>
+    <div class="hero-text animate-slide-left">
+      <div class="code-line text-secondary-color mb-4 text-xl opacity-70">01 // Welcome</div>
       <h1 class="hero-title">
-        <span class="text-highlight-color">Hello, I'm</span>
+        <span class="text-gradient">Hello, I'm</span>
         <span class="text-primary-color">Adham Soliman</span>
       </h1>
       <h2 class="hero-subtitle">Java Backend Developer</h2>
@@ -13,50 +13,59 @@
         Passionate about clean code and software architecture.
       </p>
       <div class="hero-buttons">
-        <a routerLink="/projects" class="btn-primary">
-          View Projects <span class="ml-2">→</span>
+        <a routerLink="/projects" class="btn-primary hover-lift">
+          <i class="fas fa-code"></i>
+          View Projects
+          <i class="fas fa-arrow-right ml-2"></i>
         </a>
-        <a routerLink="/contact" class="btn-secondary">
-          Contact Me <span class="ml-2">→</span>
+        <a routerLink="/contact" class="btn-secondary hover-lift">
+          <i class="fas fa-envelope"></i>
+          Contact Me
+          <i class="fas fa-arrow-right ml-2"></i>
         </a>
       </div>
     </div>
-    <div class="hero-image">
-      <img 
-        src="assets/images/profile.jpg" 
-        alt="Adham Soliman" 
-        class="profile-image"
-        [class.loaded]="imageLoaded"
-        (load)="onImageLoad()"
-      >
-      <div class="image-glow"></div>
+    <div class="hero-image animate-slide-right">
+      <div class="image-container">
+        <img
+          src="assets/images/profile.jpg"
+          alt="Adham Soliman"
+          class="profile-image"
+          [class.loaded]="imageLoaded"
+          (load)="onImageLoad()"
+        >
+        <div class="image-glow"></div>
+        <div class="image-border"></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Featured Projects Section -->
-<section class="featured-section">
+<section class="featured-section animate-fade-in">
   <div class="section-header">
     <div class="code-line text-secondary-color mb-4 text-xl opacity-70">02 // Featured Work</div>
-    <h2 class="section-title">Selected Projects</h2>
+    <h2 class="section-title text-gradient">My Projects</h2>
   </div>
-  
+
   <div class="featured-grid">
-    <div class="featured-card" *ngFor="let project of featuredProjects">
+    <div class="featured-card glass-effect hover-lift" *ngFor="let project of featuredProjects">
       <div class="card-content">
-        <span class="card-number">#{{project.id}}</span>
+        <div class="card-header">
+          <span class="card-number">#{{project.id}}</span>
+          <div class="card-links">
+            <a [href]="project.liveUrl" target="_blank" class="card-link" *ngIf="project.liveUrl" aria-label="View live project">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a [href]="project.githubUrl" target="_blank" class="card-link" *ngIf="project.githubUrl" aria-label="View source code">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
         <h3 class="card-title">{{project.title}}</h3>
         <p class="card-description">{{project.description}}</p>
         <div class="card-tech">
-          <span *ngFor="let tech of project.technologies">{{tech}}</span>
-        </div>
-        <div class="card-links">
-          <a [href]="project.liveUrl" target="_blank" class="card-link" *ngIf="project.liveUrl">
-            View Project <span class="ml-1">→</span>
-          </a>
-          <a [href]="project.githubUrl" target="_blank" class="card-link" *ngIf="project.githubUrl">
-            Source Code <span class="ml-1">→</span>
-          </a>
+          <span *ngFor="let tech of project.technologies" class="tech-tag">{{tech}}</span>
         </div>
       </div>
     </div>
@@ -64,21 +73,23 @@
 </section>
 
 <!-- Skills Preview Section -->
-<section class="skills-preview">
+<section class="skills-preview animate-fade-in">
   <div class="section-header">
-    <div class="code-line text-secondary-color mb-4 text-xl opacity-70">03 // Skills</div>
-    <h2 class="section-title">What I Do</h2>
+    <div class="code-line text-secondary-color mb-4 text-xl opacity-70">03 // Expertise</div>
+    <h2 class="section-title text-gradient">My Skills</h2>
   </div>
-  
+
   <div class="skills-grid">
-    <div class="skill-category" *ngFor="let category of skills | keyvalue">
+    <div class="skill-category glass-effect" *ngFor="let category of skills | keyvalue">
       <h3 class="category-title">{{category.key}}</h3>
       <div class="skill-list">
         <div class="skill-item" *ngFor="let skill of category.value">
           <div class="skill-info">
             <span class="skill-name">{{skill.name}}</span>
             <div class="skill-bar">
-              <div class="skill-progress" [style.width.%]="skill.level"></div>
+              <div class="skill-progress" [style.width.%]="skill.level">
+                <div class="skill-progress-glow"></div>
+              </div>
             </div>
           </div>
           <span class="skill-level">{{skill.level}}%</span>
@@ -89,20 +100,24 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section">
-  <div class="cta-content">
-    <h2 class="cta-title">Let's Work Together</h2>
+<section class="cta-section animate-fade-in">
+  <div class="cta-content glass-effect">
+    <h2 class="cta-title text-gradient">Let's Work Together</h2>
     <p class="cta-description">
       I'm currently open to new opportunities and collaborations.
       Let's create something amazing together.
     </p>
     <div class="cta-buttons">
-      <a routerLink="/contact" class="btn-primary">
-        Get In Touch <span class="ml-2">→</span>
+      <a routerLink="/contact" class="btn-primary hover-lift">
+        <i class="fas fa-paper-plane"></i>
+        Get In Touch
+        <i class="fas fa-arrow-right ml-2"></i>
       </a>
-      <a routerLink="/cv" class="btn-secondary">
-        View Resume <span class="ml-2">→</span>
+      <a routerLink="/cv" class="btn-secondary hover-lift">
+        <i class="fas fa-file-alt"></i>
+        View Resume
+        <i class="fas fa-arrow-right ml-2"></i>
       </a>
     </div>
   </div>
-</section> 
+</section>

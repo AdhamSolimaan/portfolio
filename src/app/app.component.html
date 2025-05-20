@@ -179,22 +179,62 @@
 
 <!-- Main container with fade-in animation -->
 <div class="main-container animate-fade-in">
-  <!-- Navigation with slide-down animation -->
-  <nav class="nav-container animate-slide-up">
+  <!-- Navigation with glass effect and slide-down animation -->
+  <nav class="nav-container glass-effect animate-slide-up">
     <div class="nav-content">
-      <a routerLink="/home" class="nav-logo animate-scale">Portfolio</a>
+      <a routerLink="/home" class="nav-logo text-gradient animate-scale">
+        <span class="code-text">&lt;</span>Portfolio<span class="code-text">/&gt;</span>
+      </a>
       <div class="nav-links">
-        <a routerLink="/home" class="nav-link animate-slide-left">Home</a>
-        <a routerLink="/about" class="nav-link animate-slide-left" style="animation-delay: 0.1s">About</a>
-        <a routerLink="/projects" class="nav-link animate-slide-left" style="animation-delay: 0.2s">Projects</a>
-        <a routerLink="/skills" class="nav-link animate-slide-left" style="animation-delay: 0.3s">Skills</a>
-        <a routerLink="/contact" class="nav-link animate-slide-left" style="animation-delay: 0.4s">Contact</a>
+        <a routerLink="/home" class="nav-link animate-slide-left" routerLinkActive="active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a routerLink="/about" class="nav-link animate-slide-left" routerLinkActive="active" style="animation-delay: 0.1s">
+          <i class="fas fa-user"></i>
+          <span>About</span>
+        </a>
+        <a routerLink="/projects" class="nav-link animate-slide-left" routerLinkActive="active" style="animation-delay: 0.2s">
+          <i class="fas fa-code"></i>
+          <span>Projects</span>
+        </a>
+        <a routerLink="/skills" class="nav-link animate-slide-left" routerLinkActive="active" style="animation-delay: 0.3s">
+          <i class="fas fa-tools"></i>
+          <span>Skills</span>
+        </a>
+        <a routerLink="/contact" class="nav-link animate-slide-left" routerLinkActive="active" style="animation-delay: 0.4s">
+          <i class="fas fa-envelope"></i>
+          <span>Contact</span>
+        </a>
       </div>
+      <button class="theme-toggle animate-scale" style="animation-delay: 0.5s" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
   </nav>
 
-  <!-- Router outlet for component rendering -->
-  <router-outlet></router-outlet>
+  <!-- Main content area -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer with social links -->
+  <footer class="footer glass-effect animate-slide-up">
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <p class="copyright">© 2024 Adham Soliman. All rights reserved.</p>
+    </div>
+  </footer>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

@@ -37,8 +37,8 @@ import { RouterModule } from '@angular/router';
         </div>
         <div class="footer-section">
           <h4>Contact</h4>
-          <p>Email: adham&#64;example.com</p>
-          <p>Phone: +1234567890</p>
+          <p>Email: adhamsoliman12199&#64;gmail.com</p>
+          <p>Phone: +21003197262</p>
         </div>
         <div class="footer-section">
           <h4>Social</h4>
@@ -285,4 +285,4 @@ export class LayoutComponent {
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
-} 
+}
