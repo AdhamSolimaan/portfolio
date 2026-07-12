@@ -9,7 +9,7 @@ export interface Project {
   description: string;
   technologies: string[];
   features: string[];
-  category: 'fullstack' | 'telecom' | 'personal';
+  category: 'fullstack' | 'telecom' | 'personal' | 'freelance';
   status: 'completed' | 'in-progress' | 'planning';
   duration: string;
   role: string;
@@ -54,7 +54,7 @@ export class PortfolioService {
 
   private experiences: Experience[] = [
     {
-      title: 'Full Stack Engineer (Java · Angular)',
+      title: 'Full Stack Engineer (Java - Angular)',
       company: 'NTG Clarity Company',
       location: 'Giza, Egypt',
       period: '09/2024 – Present',
@@ -69,7 +69,7 @@ export class PortfolioService {
       ]
     },
     {
-      title: 'Full Stack Engineer (Java · Angular)',
+      title: 'Full Stack Engineer (Java - Angular)',
       company: 'Sky Humans Company',
       location: 'Giza, Egypt',
       period: '06/2023 – 08/2024',
@@ -87,8 +87,92 @@ export class PortfolioService {
   private projects: Project[] = [
     {
       id: 1,
-      title: 'STC NETCONT — Network Control',
-      company: 'NTG Clarity · STC KSA',
+      title: 'Adham Soliman - Personal Portfolio',
+      company: 'Freelance - Personal Brand',
+      description:
+        'My own Angular portfolio website for Adham Soliman - themes, project filters, skills, contact, and CV - showcasing Full Stack work with Angular frontends and Java/Spring Boot backends.',
+      impact: 'Personal brand site recruiters and clients can scan for Angular + Java experience.',
+      technologies: ['Angular', 'TypeScript', 'CSS3', 'RxJS', 'Responsive Design'],
+      features: [
+        'Multi-theme Angular SPA with project filters',
+        'Experience timeline, skills map, and CV download',
+        'Contact form and mobile-first layout',
+        'Featured telecom and freelance project showcase'
+      ],
+      category: 'personal',
+      status: 'completed',
+      duration: '2025 – 2026',
+      role: 'Full Stack Engineer',
+      imageUrl: 'assets/images/projects/adham-soliman-portfolio.jpg',
+      demoUrl: '/'
+    },
+    {
+      id: 2,
+      title: 'Wink Entertainment - Company Portfolio',
+      company: 'Freelance - Wink Entertainment L.L.C.',
+      description:
+        'Company portfolio website for Wink Entertainment - event agency site covering services, partners, event galleries, and portfolio download for conferences, exhibitions, and entertainment shows in Saudi Arabia.',
+      impact: 'Gave the company a polished Angular web presence to present services and past events to clients.',
+      technologies: ['Angular', 'TypeScript', 'PrimeNG', 'Bootstrap', 'SCSS', 'Responsive Design'],
+      features: [
+        'Company home with services and partner carousel',
+        'Event galleries for Riyadh Season and major productions',
+        'About, contact, and downloadable company portfolio PDF',
+        'Responsive UI for desktop and mobile'
+      ],
+      category: 'freelance',
+      status: 'completed',
+      duration: '2025',
+      role: 'Frontend Developer',
+      imageUrl: 'assets/images/projects/wink-entertainment.png',
+      demoUrl: 'https://winkems.vercel.app/'
+    },
+    {
+      id: 3,
+      title: 'Dr. Ahmed Raafat - Nutrition Website',
+      company: 'Freelance - Clinical Nutrition',
+      description:
+        'Nutrition doctor website for Dr. Ahmed Raafat - clinical nutritionist site with services, stats, testimonials, blog, and contact for personalized nutrition plans, weight management, and sports nutrition.',
+      impact: 'Helped the clinic present services and convert visitors into consultation inquiries.',
+      technologies: ['Angular', 'TypeScript', 'EmailJS', 'CSS3', 'Responsive Design'],
+      features: [
+        'Hero and services for clinical, weight, and sports nutrition',
+        'Client stats, testimonials, and blog sections',
+        'Contact form with EmailJS integration',
+        'Mobile-friendly marketing layout'
+      ],
+      category: 'freelance',
+      status: 'completed',
+      duration: '2025',
+      role: 'Frontend Developer',
+      imageUrl: 'assets/images/projects/nutrition-doctor.jpg',
+      demoUrl: 'https://nutrition-website-self.vercel.app/'
+    },
+    {
+      id: 4,
+      title: 'Ahmed Kassem - Personal Profile',
+      company: 'Freelance - Personal Profile',
+      description:
+        'Personal profile portfolio for Ahmed Kassem - Executive Events, Conferences & Exhibitions Director - with career story, metrics, skills, real event projects, testimonials, and contact.',
+      impact: 'Professional personal brand site highlighting 10+ years of entertainment and mega-event leadership.',
+      technologies: ['Angular', 'TypeScript', 'CSS3', 'Responsive Design'],
+      features: [
+        'Profile hero with typing roles and achievement metrics',
+        'Experience, skills, and authentic project portfolio',
+        'Testimonials and project-inquiry contact form',
+        'CV download and photo integration'
+      ],
+      category: 'freelance',
+      status: 'completed',
+      duration: '2025',
+      role: 'Frontend Developer',
+      imageUrl: 'assets/images/projects/ahmed-kassem-profile.jpg',
+      demoUrl: 'https://ahmedkassem.vercel.app/'
+    },
+    {
+      id: 5,
+      title: 'STC NETCONT - Network Control',
+      company: 'NTG Clarity - STC KSA',
       description:
         'Full-stack network control system for STC: Java/Spring Boot services bar/unbar sites from GIS-fed lists, with Angular screens for operators to monitor and trigger NMS actions.',
       impact: 'Gave telecom ops a unified Angular + Java workflow for automated, auditable network control.',
@@ -102,13 +186,12 @@ export class PortfolioService {
       category: 'telecom',
       status: 'completed',
       duration: '2024 – Present',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/netcont.jpg'
+      role: 'Full Stack Engineer'
     },
     {
-      id: 2,
-      title: 'SM — Service Management',
-      company: 'NTG Clarity · Vodafone',
+      id: 6,
+      title: 'SM - Service Management',
+      company: 'NTG Clarity - Vodafone',
       description:
         'Full-stack Vodafone field service platform: Spring Boot APIs plus Angular web apps managing work orders, service requests, and technician events with real-time status tracking.',
       impact: 'Connected customer systems to field teams through Angular UIs and Java APIs with QR verification and alerts.',
@@ -122,13 +205,12 @@ export class PortfolioService {
       category: 'telecom',
       status: 'completed',
       duration: '2024 – Present',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/sm.jpg'
+      role: 'Full Stack Engineer'
     },
     {
-      id: 3,
-      title: 'VSM — Vodafone Service Management',
-      company: 'NTG Clarity · Vodafone',
+      id: 7,
+      title: 'VSM - Vodafone Service Management',
+      company: 'NTG Clarity - Vodafone',
       description:
         'Full-stack monitoring product for Vodafone users and internet devices: Angular dashboards consuming Java/Spring Boot REST APIs with optimized PostgreSQL queries.',
       impact: 'Faster device/user insights for ops teams through a cohesive Angular + Java stack.',
@@ -142,11 +224,10 @@ export class PortfolioService {
       category: 'telecom',
       status: 'completed',
       duration: '2024 – Present',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/vsm.jpg'
+      role: 'Full Stack Engineer'
     },
     {
-      id: 4,
+      id: 8,
       title: 'Donation Platform',
       company: 'NTG Clarity (Internal)',
       description:
@@ -162,11 +243,10 @@ export class PortfolioService {
       category: 'fullstack',
       status: 'completed',
       duration: '2024',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/donation.jpg'
+      role: 'Full Stack Engineer'
     },
     {
-      id: 5,
+      id: 9,
       title: 'To-Do List Application',
       company: 'NTG Clarity (Internal)',
       description:
@@ -182,11 +262,10 @@ export class PortfolioService {
       category: 'fullstack',
       status: 'completed',
       duration: '2024',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/todo.jpg'
+      role: 'Full Stack Engineer'
     },
     {
-      id: 6,
+      id: 10,
       title: 'Task Management System',
       company: 'Sky Humans',
       description:
@@ -202,11 +281,10 @@ export class PortfolioService {
       category: 'fullstack',
       status: 'completed',
       duration: '2023 – 2024',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/tasks.jpg'
+      role: 'Full Stack Engineer'
     },
     {
-      id: 7,
+      id: 11,
       title: 'Order & Customer Management',
       company: 'Sky Humans',
       description:
@@ -222,29 +300,7 @@ export class PortfolioService {
       category: 'fullstack',
       status: 'completed',
       duration: '2023 – 2024',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/orders.jpg'
-    },
-    {
-      id: 8,
-      title: 'Portfolio Website',
-      company: 'Personal',
-      description:
-        'This Angular portfolio — themes, project filters, and CV — representing a Full Stack Engineer specializing in Angular frontends and Java/Spring Boot backends.',
-      impact: 'Public showcase of Angular craft aligned with Java full-stack professional branding.',
-      technologies: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'CSS3', 'RxJS'],
-      features: [
-        'Angular SPA with three professional themes',
-        'Filterable Java + Angular project showcase',
-        'Skills map and CV download',
-        'Mobile-first responsive layout'
-      ],
-      category: 'personal',
-      status: 'completed',
-      duration: '2025 – 2026',
-      role: 'Full Stack Engineer',
-      imageUrl: '/assets/images/projects/portfolio.jpg',
-      demoUrl: '/'
+      role: 'Full Stack Engineer'
     }
   ];
 
@@ -273,7 +329,10 @@ export class PortfolioService {
 
   getFeaturedProjects(): Observable<Project[]> {
     return this.getProjects().pipe(
-      map(projects => projects.slice(0, 3))
+      map(projects => {
+        const liveFreelance = projects.filter(p => p.category === 'freelance' && p.demoUrl);
+        return liveFreelance.length >= 3 ? liveFreelance.slice(0, 3) : projects.slice(0, 3);
+      })
     );
   }
 

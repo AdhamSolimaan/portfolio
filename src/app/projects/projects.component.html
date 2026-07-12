@@ -3,7 +3,7 @@
     <p class="eyebrow">Work</p>
     <h1>Projects that prove the stack</h1>
     <p class="lead">
-      Telecom and enterprise products built end-to-end with <strong>Angular</strong> and <strong>Java</strong> — filtered so recruiters can scan fast.
+      Freelance client sites, plus telecom and enterprise products built with <strong>Angular</strong> and <strong>Java</strong> — filtered so recruiters can scan fast.
     </p>
   </header>
 
@@ -28,6 +28,10 @@
       tabindex="0"
       role="button"
     >
+      <div class="project-thumb" *ngIf="project.imageUrl">
+        <img [src]="project.imageUrl" [alt]="project.title" loading="lazy" />
+        <span class="live-badge" *ngIf="project.demoUrl && project.demoUrl !== '/'">Live</span>
+      </div>
       <div class="project-header">
         <span class="project-number">{{ project.id.toString().padStart(2, '0') }}</span>
         <span class="project-category">{{ project.category }}</span>
@@ -40,6 +44,17 @@
       <div class="project-tech">
         <span *ngFor="let tech of project.technologies.slice(0, 5)">{{ tech }}</span>
       </div>
+      <div class="card-actions" *ngIf="project.demoUrl" (click)="$event.stopPropagation()">
+        <a
+          [href]="project.demoUrl"
+          class="btn-demo"
+          [attr.target]="project.demoUrl.startsWith('http') ? '_blank' : null"
+          [attr.rel]="project.demoUrl.startsWith('http') ? 'noopener noreferrer' : null"
+        >
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          Live demo
+        </a>
+      </div>
     </article>
   </div>
 
@@ -51,6 +66,9 @@
   <div class="modal-backdrop" *ngIf="selectedProject" (click)="closeProject()">
     <div class="modal glass-effect" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
       <button type="button" class="modal-close" (click)="closeProject()" aria-label="Close">×</button>
+      <div class="modal-thumb" *ngIf="selectedProject.imageUrl">
+        <img [src]="selectedProject.imageUrl" [alt]="selectedProject.title" />
+      </div>
       <span class="project-category">{{ selectedProject.category }}</span>
       <h2>{{ selectedProject.title }}</h2>
       <p class="modal-meta">{{ selectedProject.company }} · {{ selectedProject.duration }}</p>
@@ -65,8 +83,25 @@
         <span *ngFor="let tech of selectedProject.technologies">{{ tech }}</span>
       </div>
       <div class="modal-actions" *ngIf="selectedProject.demoUrl || selectedProject.githubUrl">
-        <a *ngIf="selectedProject.demoUrl" [href]="selectedProject.demoUrl" class="btn-primary" target="_blank" rel="noopener">Live demo</a>
-        <a *ngIf="selectedProject.githubUrl" [href]="selectedProject.githubUrl" class="btn-secondary" target="_blank" rel="noopener">GitHub</a>
+        <a
+          *ngIf="selectedProject.demoUrl"
+          [href]="selectedProject.demoUrl"
+          class="btn-primary"
+          [attr.target]="selectedProject.demoUrl.startsWith('http') ? '_blank' : null"
+          [attr.rel]="selectedProject.demoUrl.startsWith('http') ? 'noopener noreferrer' : null"
+        >
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          Live demo
+        </a>
+        <a
+          *ngIf="selectedProject.githubUrl"
+          [href]="selectedProject.githubUrl"
+          class="btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
       </div>
     </div>
   </div>

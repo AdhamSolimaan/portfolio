@@ -71,21 +71,37 @@
 <section class="featured-section animate-fade-in">
   <div class="section-header">
     <h2 class="section-title">Featured Work</h2>
-    <p class="section-subtitle">Telecom and enterprise systems built end-to-end with Angular and Java.</p>
+    <p class="section-subtitle">Freelance portfolio sites and telecom systems built with Angular and Java.</p>
   </div>
 
   <div class="featured-grid" *ngIf="!isLoading">
     <article class="project-preview glass-effect" *ngFor="let project of featuredProjects">
-      <div class="preview-top">
-        <span class="preview-category">{{ project.category }}</span>
-        <span class="preview-role">{{ project.role }}</span>
+      <div class="preview-thumb" *ngIf="project.imageUrl">
+        <img [src]="project.imageUrl" [alt]="project.title" loading="lazy" />
+        <span class="live-badge" *ngIf="project.demoUrl">Live</span>
       </div>
-      <h3>{{ project.title }}</h3>
-      <p class="preview-company">{{ project.company }}</p>
-      <p class="preview-desc">{{ project.description }}</p>
-      <p class="preview-impact" *ngIf="project.impact"><strong>Impact:</strong> {{ project.impact }}</p>
-      <div class="preview-tech">
-        <span *ngFor="let tech of project.technologies.slice(0, 4)">{{ tech }}</span>
+      <div class="preview-body">
+        <div class="preview-top">
+          <span class="preview-category">{{ project.category }}</span>
+          <span class="preview-role">{{ project.role }}</span>
+        </div>
+        <h3>{{ project.title }}</h3>
+        <p class="preview-company">{{ project.company }}</p>
+        <p class="preview-desc">{{ project.description }}</p>
+        <p class="preview-impact" *ngIf="project.impact"><strong>Impact:</strong> {{ project.impact }}</p>
+        <div class="preview-tech">
+          <span *ngFor="let tech of project.technologies.slice(0, 4)">{{ tech }}</span>
+        </div>
+        <a
+          *ngIf="project.demoUrl"
+          [href]="project.demoUrl"
+          class="btn-demo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          Live demo
+        </a>
       </div>
     </article>
   </div>

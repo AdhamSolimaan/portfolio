@@ -14,7 +14,7 @@ import { pageFadeAnimation, listStaggerAnimation } from '../shared/animations';
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   activeFilter = 'All';
-  categories = ['All', 'fullstack', 'telecom', 'personal'];
+  categories = ['All', 'fullstack', 'telecom', 'freelance', 'personal'];
   projects: Project[] = [];
   filteredProjects: Project[] = [];
   selectedProject: Project | null = null;
