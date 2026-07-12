@@ -87,27 +87,6 @@ export class PortfolioService {
   private projects: Project[] = [
     {
       id: 1,
-      title: 'Adham Soliman - Personal Portfolio',
-      company: 'Freelance - Personal Brand',
-      description:
-        'My own Angular portfolio website for Adham Soliman - themes, project filters, skills, contact, and CV - showcasing Full Stack work with Angular frontends and Java/Spring Boot backends.',
-      impact: 'Personal brand site recruiters and clients can scan for Angular + Java experience.',
-      technologies: ['Angular', 'TypeScript', 'CSS3', 'RxJS', 'Responsive Design'],
-      features: [
-        'Multi-theme Angular SPA with project filters',
-        'Experience timeline, skills map, and CV download',
-        'Contact form and mobile-first layout',
-        'Featured telecom and freelance project showcase'
-      ],
-      category: 'personal',
-      status: 'completed',
-      duration: '2025 – 2026',
-      role: 'Full Stack Engineer',
-      imageUrl: 'assets/images/projects/adham-soliman-portfolio.jpg',
-      demoUrl: '/'
-    },
-    {
-      id: 2,
       title: 'Wink Entertainment - Company Portfolio',
       company: 'Freelance - Wink Entertainment L.L.C.',
       description:
@@ -128,7 +107,7 @@ export class PortfolioService {
       demoUrl: 'https://winkems.vercel.app/'
     },
     {
-      id: 3,
+      id: 2,
       title: 'Dr. Ahmed Raafat - Nutrition Website',
       company: 'Freelance - Clinical Nutrition',
       description:
@@ -149,7 +128,7 @@ export class PortfolioService {
       demoUrl: 'https://nutrition-website-self.vercel.app/'
     },
     {
-      id: 4,
+      id: 3,
       title: 'Ahmed Kassem - Personal Profile',
       company: 'Freelance - Personal Profile',
       description:
@@ -170,7 +149,7 @@ export class PortfolioService {
       demoUrl: 'https://ahmedkassem.vercel.app/'
     },
     {
-      id: 5,
+      id: 4,
       title: 'STC NETCONT - Network Control',
       company: 'NTG Clarity - STC KSA',
       description:
