@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy --base-href=/portfolio/",
-    "predeploy": "ng build --configuration production"
+    "predeploy": "ng build --configuration production --base-href=/portfolio/",
+    "build:vercel": "ng build --configuration production --base-href=/"
   },
   "private": true,
   "dependencies": {

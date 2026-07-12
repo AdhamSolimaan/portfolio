@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration production --base-href=/portfolio/
 
       - name: Add SPA fallback for GitHub Pages
         run: cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
