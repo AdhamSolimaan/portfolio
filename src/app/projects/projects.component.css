@@ -1,0 +1,245 @@
+.projects-page {
+  padding: 4rem 1.25rem 5rem;
+}
+
+.page-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.eyebrow {
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.lead {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin: 0.75rem 0 0;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-medium);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 42px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: var(--text-on-primary);
+  border-color: var(--primary-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(var(--primary-color-rgb), 0.45);
+  box-shadow: var(--shadow-lg);
+  outline: none;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-number {
+  font-family: var(--font-mono);
+  color: var(--highlight-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.project-category {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--secondary-color);
+  background: rgba(var(--secondary-color-rgb), 0.12);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.project-company,
+.project-period {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.project-description,
+.project-impact {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.project-tech span {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(var(--primary-color-rgb), 0.12);
+  color: var(--primary-color);
+  border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem 1rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  width: min(640px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  animation: slideUp 0.25s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.75rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal h2 {
+  margin: 0.75rem 0 0.35rem;
+}
+
+.modal-meta,
+.modal-role {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.modal h4 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.modal ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.modal li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 800px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

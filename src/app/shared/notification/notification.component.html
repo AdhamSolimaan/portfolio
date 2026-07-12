@@ -1,0 +1,13 @@
+<div class="notification-container" *ngIf="notification">
+  <div class="notification" [class]="'notification-' + (notification.type || 'info')" [@slideInOut]>
+    <div class="notification-icon">
+      <i [class]="getIconClass()"></i>
+    </div>
+    <div class="notification-content">
+      <p class="notification-message">{{ notification.message }}</p>
+    </div>
+    <button class="notification-close" (click)="onClose()" title="Close notification" aria-label="Close notification">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</div> 

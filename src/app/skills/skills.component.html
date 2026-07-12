@@ -1,0 +1,33 @@
+<div class="skills-page container" [@pageFadeAnimation]>
+  <header class="page-header">
+    <p class="eyebrow">Skills</p>
+    <h1>Full-stack skill map</h1>
+    <p class="lead">
+      Honest levels by layer — backend depth first, with frontend, data, and DevOps coverage.
+    </p>
+  </header>
+
+  <div *ngIf="isLoading" class="loading-note">Loading skills…</div>
+
+  <div class="skills-grid" *ngIf="!isLoading" [@listStaggerAnimation]>
+    <section class="skill-panel glass-effect" *ngFor="let category of groupedSkills | keyvalue">
+      <h2>{{ category.key }}</h2>
+      <div class="skill-item" *ngFor="let skill of category.value">
+        <div class="skill-header">
+          <span class="skill-name">
+            <i [class]="skill.icon" *ngIf="skill.icon"></i>
+            {{ skill.name }}
+          </span>
+          <span class="skill-meta">{{ getSkillLevelText(skill.level) }}</span>
+        </div>
+        <div class="skill-bar">
+          <div
+            class="skill-progress"
+            [style.width.%]="getSkillLevelPercentage(skill.level)"
+            [attr.title]="getSkillLevelText(skill.level)"
+          ></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

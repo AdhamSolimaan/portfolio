@@ -1,27 +1,29 @@
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero-section animate-fade-in">
   <div class="hero-content">
     <div class="hero-text animate-slide-left">
-      <div class="code-line text-secondary-color mb-4 text-xl opacity-70">01 // Welcome</div>
+      <p class="hero-eyebrow">Full-Stack Engineer · 3 Years Experience</p>
       <h1 class="hero-title">
-        <span class="text-gradient">Hello, I'm</span>
-        <span class="text-primary-color">Adham Soliman</span>
+        <span class="hero-greeting">Adham Soliman</span>
       </h1>
-      <h2 class="hero-subtitle">Java Backend Developer</h2>
+      <p class="hero-role text-gradient">Java · Spring Boot · Angular</p>
       <p class="hero-description">
-        I build efficient and scalable backend systems using Java and Spring Boot.
-        Passionate about clean code and software architecture.
+        Backend-focused full-stack engineer building scalable systems for telecom and enterprise clients —
+        including <strong>Vodafone</strong> and <strong>STC</strong> — with Spring Boot, PostgreSQL, and REST APIs.
       </p>
+      <div class="hero-proof">
+        <span>NTG Clarity</span>
+        <span>Sky Humans</span>
+        <span>KSA · UAE · Egypt</span>
+      </div>
       <div class="hero-buttons">
-        <a routerLink="/projects" class="btn-primary hover-lift">
-          <i class="fas fa-code"></i>
+        <a routerLink="/projects" class="btn-primary">
           View Projects
-          <i class="fas fa-arrow-right ml-2"></i>
+          <i class="fas fa-arrow-right"></i>
         </a>
-        <a routerLink="/contact" class="btn-secondary hover-lift">
-          <i class="fas fa-envelope"></i>
-          Contact Me
-          <i class="fas fa-arrow-right ml-2"></i>
+        <a href="assets/documents/resume.pdf" download class="btn-secondary">
+          <i class="fas fa-file-download"></i>
+          Download CV
         </a>
       </div>
     </div>
@@ -35,88 +37,98 @@
           (load)="onImageLoad()"
         >
         <div class="image-glow"></div>
-        <div class="image-border"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Featured Projects Section -->
+<!-- Experience Timeline -->
+<section class="timeline-section animate-fade-in" id="experience">
+  <div class="section-header">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">Three years shipping production backends for regional and telecom clients.</p>
+  </div>
+  <div class="timeline" *ngIf="!isLoading">
+    <div class="timeline-item" *ngFor="let job of experiences">
+      <div class="timeline-marker" [class.current]="job.current"></div>
+      <div class="timeline-card glass-effect">
+        <div class="timeline-meta">
+          <span class="timeline-period">{{ job.period }}</span>
+          <span class="timeline-badge" *ngIf="job.current">Current</span>
+        </div>
+        <h3>{{ job.title }}</h3>
+        <p class="timeline-company">{{ job.company }} · {{ job.location }}</p>
+        <ul>
+          <li *ngFor="let bullet of job.bullets.slice(0, 3)">{{ bullet }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
 <section class="featured-section animate-fade-in">
   <div class="section-header">
-    <div class="code-line text-secondary-color mb-4 text-xl opacity-70">02 // Featured Work</div>
-    <h2 class="section-title text-gradient">My Projects</h2>
+    <h2 class="section-title">Featured Work</h2>
+    <p class="section-subtitle">Telecom and enterprise systems that show the full stack — APIs, data, and delivery.</p>
   </div>
 
-  <div class="featured-grid">
-    <div class="featured-card glass-effect hover-lift" *ngFor="let project of featuredProjects">
-      <div class="card-content">
-        <div class="card-header">
-          <span class="card-number">#{{project.id}}</span>
-          <div class="card-links">
-            <a [href]="project.liveUrl" target="_blank" class="card-link" *ngIf="project.liveUrl" aria-label="View live project">
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-            <a [href]="project.githubUrl" target="_blank" class="card-link" *ngIf="project.githubUrl" aria-label="View source code">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <h3 class="card-title">{{project.title}}</h3>
-        <p class="card-description">{{project.description}}</p>
-        <div class="card-tech">
-          <span *ngFor="let tech of project.technologies" class="tech-tag">{{tech}}</span>
-        </div>
+  <div class="featured-grid" *ngIf="!isLoading">
+    <article class="project-preview glass-effect" *ngFor="let project of featuredProjects">
+      <div class="preview-top">
+        <span class="preview-category">{{ project.category }}</span>
+        <span class="preview-role">{{ project.role }}</span>
       </div>
-    </div>
+      <h3>{{ project.title }}</h3>
+      <p class="preview-company">{{ project.company }}</p>
+      <p class="preview-desc">{{ project.description }}</p>
+      <p class="preview-impact" *ngIf="project.impact"><strong>Impact:</strong> {{ project.impact }}</p>
+      <div class="preview-tech">
+        <span *ngFor="let tech of project.technologies.slice(0, 4)">{{ tech }}</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="section-cta">
+    <a routerLink="/projects" class="btn-secondary">See all projects</a>
   </div>
 </section>
 
-<!-- Skills Preview Section -->
+<!-- Skills Preview -->
 <section class="skills-preview animate-fade-in">
   <div class="section-header">
-    <div class="code-line text-secondary-color mb-4 text-xl opacity-70">03 // Expertise</div>
-    <h2 class="section-title text-gradient">My Skills</h2>
+    <h2 class="section-title">Full-Stack Range</h2>
+    <p class="section-subtitle">Scannable stack layers — from Spring backends to Angular UIs and DevOps basics.</p>
   </div>
 
-  <div class="skills-grid">
-    <div class="skill-category glass-effect" *ngFor="let category of skills | keyvalue">
-      <h3 class="category-title">{{category.key}}</h3>
-      <div class="skill-list">
-        <div class="skill-item" *ngFor="let skill of category.value">
-          <div class="skill-info">
-            <span class="skill-name">{{skill.name}}</span>
-            <div class="skill-bar">
-              <div class="skill-progress" [style.width.%]="skill.level">
-                <div class="skill-progress-glow"></div>
-              </div>
-            </div>
-          </div>
-          <span class="skill-level">{{skill.level}}%</span>
+  <div class="skills-layers" *ngIf="!isLoading">
+    <div class="skill-layer glass-effect" *ngFor="let category of skills | keyvalue">
+      <h3>{{ category.key }}</h3>
+      <div class="skill-chips">
+        <div class="skill-chip" *ngFor="let skill of category.value" [style.--level]="skill.level">
+          <span>{{ skill.name }}</span>
+          <div class="chip-bar"><span></span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
+<!-- CTA -->
 <section class="cta-section animate-fade-in">
   <div class="cta-content glass-effect">
-    <h2 class="cta-title text-gradient">Let's Work Together</h2>
+    <h2 class="cta-title">Let's build something reliable</h2>
     <p class="cta-description">
-      I'm currently open to new opportunities and collaborations.
-      Let's create something amazing together.
+      Open to full-time roles and collaborations where strong Java backends and practical full-stack delivery matter.
     </p>
     <div class="cta-buttons">
-      <a routerLink="/contact" class="btn-primary hover-lift">
+      <a routerLink="/contact" class="btn-primary">
         <i class="fas fa-paper-plane"></i>
-        Get In Touch
-        <i class="fas fa-arrow-right ml-2"></i>
+        Get in touch
       </a>
-      <a routerLink="/cv" class="btn-secondary hover-lift">
+      <a routerLink="/cv" class="btn-secondary">
         <i class="fas fa-file-alt"></i>
-        View Resume
-        <i class="fas fa-arrow-right ml-2"></i>
+        View CV
       </a>
     </div>
   </div>

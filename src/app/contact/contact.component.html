@@ -1,0 +1,157 @@
+<div class="contact-page container" [@pageFadeAnimation]>
+  <header class="page-header">
+    <p class="eyebrow">Contact</p>
+    <h1>Let's talk</h1>
+    <p class="lead">
+      Open to full-time roles and collaborations. Reach out directly or send a short message —
+      I usually reply within 24 hours.
+    </p>
+  </header>
+
+  <div class="contact-layout">
+    <!-- Form -->
+    <section class="form-panel glass-effect">
+      <h2>Send a message</h2>
+      <p class="panel-sub">Tell me about the role, project, or idea.</p>
+
+      <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              [(ngModel)]="contactForm.name"
+              required
+              autocomplete="name"
+              placeholder="Your name"
+              [disabled]="isLoading"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              [(ngModel)]="contactForm.email"
+              required
+              email
+              autocomplete="email"
+              placeholder="you@company.com"
+              [disabled]="isLoading"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            [(ngModel)]="contactForm.subject"
+            required
+            placeholder="Role inquiry / project discussion"
+            [disabled]="isLoading"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            [(ngModel)]="contactForm.message"
+            required
+            placeholder="A few lines about the opportunity or what you need…"
+            [disabled]="isLoading"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="btn-primary submit-btn"
+          [disabled]="!isFormValid() || isLoading"
+        >
+          <ng-container *ngIf="!isLoading">
+            <i class="fas fa-paper-plane"></i>
+            Send message
+          </ng-container>
+          <ng-container *ngIf="isLoading">
+            <i class="fas fa-spinner fa-spin"></i>
+            Sending…
+          </ng-container>
+        </button>
+      </form>
+    </section>
+
+    <!-- Side info -->
+    <aside class="info-panel">
+      <div class="info-block glass-effect">
+        <h2>Direct contact</h2>
+
+        <a class="contact-row" href="mailto:adhamsoliman12199@gmail.com">
+          <span class="icon-wrap"><i class="fas fa-envelope"></i></span>
+          <span class="row-text">
+            <strong>Email</strong>
+            <span>adhamsoliman12199&#64;gmail.com</span>
+          </span>
+          <button type="button" class="copy-btn" (click)="copyEmail(); $event.preventDefault(); $event.stopPropagation()" title="Copy email" aria-label="Copy email">
+            <i class="fas fa-copy"></i>
+          </button>
+        </a>
+
+        <a class="contact-row" href="tel:+201003197262">
+          <span class="icon-wrap"><i class="fas fa-phone"></i></span>
+          <span class="row-text">
+            <strong>Phone</strong>
+            <span>+20 100 319 7262</span>
+          </span>
+          <button type="button" class="copy-btn" (click)="copyPhone(); $event.preventDefault(); $event.stopPropagation()" title="Copy phone" aria-label="Copy phone">
+            <i class="fas fa-copy"></i>
+          </button>
+        </a>
+
+        <div class="contact-row static">
+          <span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span>
+          <span class="row-text">
+            <strong>Location</strong>
+            <span>Cairo, Egypt</span>
+          </span>
+        </div>
+
+        <a
+          class="contact-row"
+          href="https://linkedin.com/in/adham-soliman9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="icon-wrap"><i class="fab fa-linkedin-in"></i></span>
+          <span class="row-text">
+            <strong>LinkedIn</strong>
+            <span>linkedin.com/in/adham-soliman9</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="info-block glass-effect notes">
+        <h3>What to expect</h3>
+        <ul>
+          <li>Reply within ~24 hours</li>
+          <li>Open to full-time & freelance</li>
+          <li>Java / Spring Boot · Angular · SQL</li>
+        </ul>
+        <a
+          class="btn-secondary mail-client"
+          href="mailto:adhamsoliman12199@gmail.com?subject=Opportunity%20with%20Adham&body=Hi%20Adham,%0D%0A%0D%0A"
+        >
+          <i class="fas fa-external-link-alt"></i>
+          Open email app
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>

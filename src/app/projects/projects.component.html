@@ -1,0 +1,73 @@
+<div class="projects-page container" [@pageFadeAnimation]>
+  <header class="page-header">
+    <p class="eyebrow">Work</p>
+    <h1>Projects that prove the stack</h1>
+    <p class="lead">
+      Telecom backends, full-stack internal products, and client systems — filtered so recruiters can scan fast.
+    </p>
+  </header>
+
+  <div class="filters">
+    <button
+      *ngFor="let cat of categories"
+      type="button"
+      class="filter-btn"
+      [class.active]="activeFilter === cat"
+      (click)="filterProjects(cat)"
+    >
+      {{ labelFor(cat) }}
+    </button>
+  </div>
+
+  <div class="projects-grid" *ngIf="!isLoading" [@listStaggerAnimation]>
+    <article
+      class="project-card"
+      *ngFor="let project of filteredProjects; trackBy: trackByProject"
+      (click)="openProject(project)"
+      (keyup.enter)="openProject(project)"
+      tabindex="0"
+      role="button"
+    >
+      <div class="project-header">
+        <span class="project-number">{{ project.id.toString().padStart(2, '0') }}</span>
+        <span class="project-category">{{ project.category }}</span>
+      </div>
+      <h3>{{ project.title }}</h3>
+      <p class="project-company">{{ project.company }}</p>
+      <p class="project-period">{{ project.duration }} · {{ project.role }}</p>
+      <p class="project-description">{{ project.description }}</p>
+      <p class="project-impact" *ngIf="project.impact"><strong>Impact:</strong> {{ project.impact }}</p>
+      <div class="project-tech">
+        <span *ngFor="let tech of project.technologies.slice(0, 5)">{{ tech }}</span>
+      </div>
+    </article>
+  </div>
+
+  <div *ngIf="!isLoading && filteredProjects.length === 0" class="empty">
+    No projects in this filter. Try another category.
+  </div>
+
+  <!-- Detail modal -->
+  <div class="modal-backdrop" *ngIf="selectedProject" (click)="closeProject()">
+    <div class="modal glass-effect" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+      <button type="button" class="modal-close" (click)="closeProject()" aria-label="Close">×</button>
+      <span class="project-category">{{ selectedProject.category }}</span>
+      <h2>{{ selectedProject.title }}</h2>
+      <p class="modal-meta">{{ selectedProject.company }} · {{ selectedProject.duration }}</p>
+      <p class="modal-role">{{ selectedProject.role }}</p>
+      <p>{{ selectedProject.description }}</p>
+      <p *ngIf="selectedProject.impact"><strong>Impact:</strong> {{ selectedProject.impact }}</p>
+      <h4>Highlights</h4>
+      <ul>
+        <li *ngFor="let feature of selectedProject.features">{{ feature }}</li>
+      </ul>
+      <div class="project-tech">
+        <span *ngFor="let tech of selectedProject.technologies">{{ tech }}</span>
+      </div>
+      <div class="modal-actions" *ngIf="selectedProject.demoUrl || selectedProject.githubUrl">
+        <a *ngIf="selectedProject.demoUrl" [href]="selectedProject.demoUrl" class="btn-primary" target="_blank" rel="noopener">Live demo</a>
+        <a *ngIf="selectedProject.githubUrl" [href]="selectedProject.githubUrl" class="btn-secondary" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</div>

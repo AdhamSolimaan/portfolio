@@ -1,0 +1,46 @@
+    <nav class="navbar" [class.scrolled]="isScrolled">
+      <div class="nav-content">
+        <a routerLink="/home" class="nav-logo">Portfolio</a>
+        <div class="nav-links" [class.active]="isMobileMenuOpen">
+          <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a routerLink="/about" routerLinkActive="active">About</a>
+          <a routerLink="/projects" routerLinkActive="active">Projects</a>
+          <a routerLink="/skills" routerLinkActive="active">Skills</a>
+          <a routerLink="/contact" routerLinkActive="active">Contact</a>
+        </div>
+        <button class="mobile-menu-btn" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()" title="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Adham Soliman</h3>
+          <p>Java Backend Developer</p>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: adhamsoliman12199&#64;gmail.com</p>
+          <p>Phone: +21003197262</p>
+        </div>
+        <div class="footer-section">
+          <h4>Social</h4>
+          <div class="social-links">
+            <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://twitter.com/username" target="_blank" rel="noopener noreferrer">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Adham Soliman. All rights reserved.</p>
+      </div>
+    </footer> 
