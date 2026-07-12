@@ -9,7 +9,7 @@ export interface Project {
   description: string;
   technologies: string[];
   features: string[];
-  category: 'backend' | 'fullstack' | 'telecom' | 'personal';
+  category: 'fullstack' | 'telecom' | 'personal';
   status: 'completed' | 'in-progress' | 'planning';
   duration: string;
   role: string;
@@ -29,7 +29,7 @@ export interface ContactForm {
 export interface Skill {
   name: string;
   category: 'backend' | 'frontend' | 'database' | 'tools' | 'devops' | 'soft';
-  level: number; // 1-5
+  level: number;
   icon: string;
 }
 
@@ -54,32 +54,32 @@ export class PortfolioService {
 
   private experiences: Experience[] = [
     {
-      title: 'Java Backend Developer',
+      title: 'Full Stack Engineer (Java · Angular)',
       company: 'NTG Clarity Company',
       location: 'Giza, Egypt',
       period: '09/2024 – Present',
       current: true,
       bullets: [
-        'Develop and maintain Spring Boot backend services for enterprise telecom clients including Vodafone and STC.',
-        'Implement secure RESTful APIs enabling communication across telecom platform components.',
-        'Optimize SQL queries and work with PostgreSQL via Spring Data JPA for large-scale telecom data.',
-        'Troubleshoot production issues to protect high availability for Vodafone and STC environments.',
-        'Collaborate with architects, team leads, and QA on estimation, sprint planning, and code reviews.',
-        'Contribute to CI/CD pipeline setup and automation for build, test, and deployment workflows.'
+        'Build full-stack features with Java/Spring Boot APIs and Angular UIs for telecom clients including Vodafone and STC.',
+        'Design secure RESTful APIs and integrate them with Angular frontends across telecom platform modules.',
+        'Optimize PostgreSQL access with Spring Data JPA and deliver responsive Angular screens for operational workflows.',
+        'Troubleshoot production issues end-to-end (API + UI) to protect availability for Vodafone and STC environments.',
+        'Collaborate with architects, leads, and QA on estimation, sprint planning, and code reviews.',
+        'Contribute to CI/CD automation covering backend services and Angular application deployments.'
       ]
     },
     {
-      title: 'Software Engineer',
+      title: 'Full Stack Engineer (Java · Angular)',
       company: 'Sky Humans Company',
       location: 'Giza, Egypt',
       period: '06/2023 – 08/2024',
       bullets: [
-        'Built Java/Spring Boot backend services for clients in Saudi Arabia and the UAE.',
-        'Designed and implemented RESTful APIs supporting web and mobile applications.',
-        'Integrated PostgreSQL and MySQL databases using Spring Data JPA.',
-        'Applied business logic, validation, and exception handling for reliable deliveries.',
-        'Collaborated with frontend developers and project managers to ship client requirements on time.',
-        'Improved performance through bug fixing, query optimization, and clean Git-based workflows.'
+        'Delivered Java/Spring Boot backends and Angular frontends for clients in Saudi Arabia and the UAE.',
+        'Implemented REST APIs and Angular modules supporting web applications for regional products.',
+        'Integrated PostgreSQL and MySQL with Spring Data JPA and connected Angular clients via HttpClient.',
+        'Applied validation, exception handling, and reactive/template forms for reliable full-stack deliveries.',
+        'Worked closely with PMs and stakeholders to ship client requirements on time.',
+        'Improved performance through API/query tuning, Angular UX fixes, and clean Git workflows.'
       ]
     }
   ];
@@ -90,19 +90,19 @@ export class PortfolioService {
       title: 'STC NETCONT — Network Control',
       company: 'NTG Clarity · STC KSA',
       description:
-        'Built backend control services for STC that bar/unbar network sites from GIS-fed site lists and orchestrate actions across multiple Network Management Systems (NMS).',
-      impact: 'Enabled automated, auditable network control for telecom operations across integrated NMS platforms.',
-      technologies: ['Java', 'Spring Boot', 'REST APIs', 'GIS Integration', 'NMS', 'PostgreSQL'],
+        'Full-stack network control system for STC: Java/Spring Boot services bar/unbar sites from GIS-fed lists, with Angular screens for operators to monitor and trigger NMS actions.',
+      impact: 'Gave telecom ops a unified Angular + Java workflow for automated, auditable network control.',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'REST APIs', 'PostgreSQL', 'GIS / NMS'],
       features: [
-        'Bar/unbar site lists received from GIS',
-        'Multi-NMS integration for network control',
-        'Operational workflows with logging and audit trails',
-        'Stable APIs for telecom-grade environments'
+        'Angular operator UI for site barring/unbarring workflows',
+        'Java REST APIs integrating GIS site lists and multiple NMS systems',
+        'Operational logging and audit trails',
+        'End-to-end full-stack delivery for telecom-grade environments'
       ],
       category: 'telecom',
       status: 'completed',
       duration: '2024 – Present',
-      role: 'Java Backend Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/netcont.jpg'
     },
     {
@@ -110,19 +110,19 @@ export class PortfolioService {
       title: 'SM — Service Management',
       company: 'NTG Clarity · Vodafone',
       description:
-        'Full-stack service management platform for Vodafone field operations: work orders, service requests, and technical events across web and mobile with real-time status tracking.',
-      impact: 'Streamlined technician dispatch with QR verification and automated notifications from customer systems to the field.',
-      technologies: ['Java', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Mobile Integration', 'Notifications'],
+        'Full-stack Vodafone field service platform: Spring Boot APIs plus Angular web apps managing work orders, service requests, and technician events with real-time status tracking.',
+      impact: 'Connected customer systems to field teams through Angular UIs and Java APIs with QR verification and alerts.',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'REST APIs', 'PostgreSQL', 'Notifications'],
       features: [
-        'Work order and service request management',
-        'Field technician mobile distribution',
-        'Real-time status tracking',
-        'QR code verification and automated alerts'
+        'Angular web modules for work orders and service requests',
+        'Java APIs distributing jobs to field technicians',
+        'Real-time status tracking across UI and backend',
+        'QR verification and automated notifications'
       ],
       category: 'telecom',
       status: 'completed',
       duration: '2024 – Present',
-      role: 'Full-Stack / Backend Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/sm.jpg'
     },
     {
@@ -130,19 +130,19 @@ export class PortfolioService {
       title: 'VSM — Vodafone Service Management',
       company: 'NTG Clarity · Vodafone',
       description:
-        'Developed and maintained backend services for monitoring users and Vodafone-provided internet devices, with REST APIs and optimized database access for reliable ops workflows.',
-      impact: 'Improved retrieval speed and system stability for device/user monitoring used by operations teams.',
-      technologies: ['Java', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Spring Data JPA'],
+        'Full-stack monitoring product for Vodafone users and internet devices: Angular dashboards consuming Java/Spring Boot REST APIs with optimized PostgreSQL queries.',
+      impact: 'Faster device/user insights for ops teams through a cohesive Angular + Java stack.',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'REST APIs', 'PostgreSQL', 'Spring Data JPA'],
       features: [
-        'User and CPE/internet device monitoring',
-        'REST APIs for frontend consumers',
-        'Query optimization for faster data access',
-        'Production support and troubleshooting'
+        'Angular dashboards for user and CPE monitoring',
+        'Java REST APIs for reliable data access',
+        'Query optimization for faster UI loads',
+        'Production support across frontend and backend'
       ],
       category: 'telecom',
       status: 'completed',
       duration: '2024 – Present',
-      role: 'Java Backend Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/vsm.jpg'
     },
     {
@@ -150,19 +150,19 @@ export class PortfolioService {
       title: 'Donation Platform',
       company: 'NTG Clarity (Internal)',
       description:
-        'Full-stack internal donation platform modeled after e-commerce flows (without payments): registration, listings, cart, and catalog management on Spring Boot + PostgreSQL.',
-      impact: 'Delivered a maintainable, scalable internal product using Spring Boot best practices.',
-      technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'REST APIs', 'JPA/Hibernate', 'Angular'],
+        'Full-stack donation platform (e-commerce style without payments): Angular UI for registration, listings, and cart, backed by Java/Spring Boot APIs and PostgreSQL.',
+      impact: 'Shipped a maintainable Angular + Spring Boot internal product following clean full-stack practices.',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'PostgreSQL', 'REST APIs', 'JPA/Hibernate'],
       features: [
-        'User registration and profiles',
-        'Item listing and categorization',
-        'Cart management workflows',
-        'Validated REST APIs and DB optimization'
+        'Angular flows for registration, catalog, and cart',
+        'Java REST APIs with validation',
+        'PostgreSQL persistence and query tuning',
+        'Reusable full-stack architecture patterns'
       ],
       category: 'fullstack',
       status: 'completed',
       duration: '2024',
-      role: 'Full-Stack Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/donation.jpg'
     },
     {
@@ -170,19 +170,19 @@ export class PortfolioService {
       title: 'To-Do List Application',
       company: 'NTG Clarity (Internal)',
       description:
-        'Task management API with full CRUD, validation, and dual DB setup (H2 for tests, PostgreSQL for production) following clean architecture principles.',
-      impact: 'Demonstrates production-ready Spring Boot patterns: validation, error handling, and environment-based persistence.',
-      technologies: ['Java', 'Spring Boot', 'Spring Data JPA', 'H2', 'PostgreSQL', 'REST APIs'],
+        'Full-stack task manager: Angular CRUD UI paired with Spring Boot APIs, validation, and dual DB setup (H2 tests / PostgreSQL production).',
+      impact: 'Showcases production-ready Angular + Java patterns for forms, APIs, and environment-based persistence.',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'Spring Data JPA', 'PostgreSQL', 'H2'],
       features: [
-        'Full CRUD task operations',
-        'Validation and consistent API errors',
+        'Angular task board with create/update/delete',
+        'Java REST CRUD with validation and errors',
         'H2 testing / PostgreSQL production',
-        'Clean, maintainable structure'
+        'Clean full-stack structure'
       ],
-      category: 'backend',
+      category: 'fullstack',
       status: 'completed',
       duration: '2024',
-      role: 'Backend Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/todo.jpg'
     },
     {
@@ -190,18 +190,19 @@ export class PortfolioService {
       title: 'Task Management System',
       company: 'Sky Humans',
       description:
-        'REST APIs for task creation, updates, and tracking with consistent responses, CRUD flows, and database integration for client applications.',
-      impact: 'Reliable task tracking APIs delivered for regional client projects.',
-      technologies: ['Java', 'Spring Boot', 'REST APIs', 'MySQL', 'Spring Data JPA'],
+        'Full-stack task tracking for regional clients: Angular modules for create/update/track flows on top of Java/Spring Boot REST APIs and MySQL.',
+      impact: 'Delivered consistent Angular UX and reliable Java APIs for client task workflows.',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'REST APIs', 'MySQL', 'Spring Data JPA'],
       features: [
-        'Task create/update/track APIs',
-        'CRUD with DB integration',
-        'Consistent error and response handling'
+        'Angular UI for task lifecycle management',
+        'Java CRUD APIs with consistent responses',
+        'MySQL integration via Spring Data JPA',
+        'End-to-end error handling across stack'
       ],
-      category: 'backend',
+      category: 'fullstack',
       status: 'completed',
       duration: '2023 – 2024',
-      role: 'Java Backend Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/tasks.jpg'
     },
     {
@@ -209,18 +210,19 @@ export class PortfolioService {
       title: 'Order & Customer Management',
       company: 'Sky Humans',
       description:
-        'Backend services for orders, customers, and status workflows with business logic, query optimization, and collaborative testing/issue resolution.',
-      impact: 'Supported on-time delivery of order/customer backends for KSA/UAE clients.',
-      technologies: ['Java', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'MySQL'],
+        'Full-stack order and customer system: Angular screens for status workflows backed by Java services, business logic, and optimized SQL.',
+      impact: 'Helped KSA/UAE clients manage orders end-to-end with Angular + Java delivery.',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'REST APIs', 'PostgreSQL', 'MySQL'],
       features: [
-        'Order and customer domain services',
-        'Status workflow business logic',
-        'Optimized queries and issue resolution'
+        'Angular views for orders, customers, and status',
+        'Java domain services and business rules',
+        'Optimized queries for responsive UI',
+        'Collaborative testing and issue resolution'
       ],
-      category: 'backend',
+      category: 'fullstack',
       status: 'completed',
       duration: '2023 – 2024',
-      role: 'Java Backend Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/orders.jpg'
     },
     {
@@ -228,19 +230,19 @@ export class PortfolioService {
       title: 'Portfolio Website',
       company: 'Personal',
       description:
-        'Angular portfolio with three professional themes, smooth motion, filterable projects, and CV-aligned content showcasing full-stack Java expertise.',
-      impact: 'Living product that demonstrates frontend craft alongside backend experience.',
-      technologies: ['Angular', 'TypeScript', 'CSS3', 'RxJS', 'Responsive Design'],
+        'This Angular portfolio — themes, project filters, and CV — representing a Full Stack Engineer specializing in Angular frontends and Java/Spring Boot backends.',
+      impact: 'Public showcase of Angular craft aligned with Java full-stack professional branding.',
+      technologies: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'CSS3', 'RxJS'],
       features: [
-        'Pro Blue / Black / White themes',
-        'Filterable project showcase',
-        'Skills visualization and CV download',
+        'Angular SPA with three professional themes',
+        'Filterable Java + Angular project showcase',
+        'Skills map and CV download',
         'Mobile-first responsive layout'
       ],
       category: 'personal',
       status: 'completed',
       duration: '2025 – 2026',
-      role: 'Full-Stack Developer',
+      role: 'Full Stack Engineer',
       imageUrl: '/assets/images/projects/portfolio.jpg',
       demoUrl: '/'
     }
@@ -271,7 +273,7 @@ export class PortfolioService {
 
   getFeaturedProjects(): Observable<Project[]> {
     return this.getProjects().pipe(
-      map(projects => projects.filter(p => p.category === 'telecom' || p.id <= 3).slice(0, 3))
+      map(projects => projects.slice(0, 3))
     );
   }
 
@@ -286,11 +288,13 @@ export class PortfolioService {
       { name: 'Spring Cloud', category: 'backend', level: 3, icon: 'fas fa-cloud' },
       { name: 'Microservices', category: 'backend', level: 3, icon: 'fas fa-cubes' },
 
-      { name: 'Angular', category: 'frontend', level: 4, icon: 'fab fa-angular' },
-      { name: 'TypeScript', category: 'frontend', level: 4, icon: 'fab fa-js-square' },
+      { name: 'Angular', category: 'frontend', level: 5, icon: 'fab fa-angular' },
+      { name: 'TypeScript', category: 'frontend', level: 5, icon: 'fab fa-js-square' },
       { name: 'JavaScript', category: 'frontend', level: 4, icon: 'fab fa-js' },
       { name: 'HTML5 / CSS3', category: 'frontend', level: 4, icon: 'fab fa-html5' },
-      { name: 'SCSS', category: 'frontend', level: 3, icon: 'fab fa-sass' },
+      { name: 'RxJS', category: 'frontend', level: 4, icon: 'fas fa-stream' },
+      { name: 'SCSS', category: 'frontend', level: 4, icon: 'fab fa-sass' },
+      { name: 'Reactive Forms', category: 'frontend', level: 4, icon: 'fas fa-wpforms' },
 
       { name: 'PostgreSQL', category: 'database', level: 5, icon: 'fas fa-database' },
       { name: 'MySQL', category: 'database', level: 4, icon: 'fas fa-database' },
