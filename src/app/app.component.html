@@ -2,18 +2,14 @@
 <app-loading [isLoading]="isLoading"></app-loading>
 <app-notification [notification]="notification" (close)="onNotificationClose()"></app-notification>
 
-<div class="theme-selector-container">
-  <app-theme-selector></app-theme-selector>
-</div>
-
-<div class="main-container">
+<div class="main-container" [class.menu-open]="mobileOpen">
   <nav class="nav-container glass-effect">
     <div class="nav-content">
-      <a routerLink="/home" class="nav-logo">
+      <a routerLink="/home" class="nav-logo" (click)="closeMobile()">
         <span class="logo-mark">AS</span>
         <span class="logo-text">Adham Soliman</span>
       </a>
-      <div class="nav-links" [class.open]="mobileOpen">
+      <div class="nav-links" [class.open]="mobileOpen" id="primary-nav">
         <a routerLink="/home" class="nav-link" routerLinkActive="active" (click)="closeMobile()">Home</a>
         <a routerLink="/about" class="nav-link" routerLinkActive="active" (click)="closeMobile()">About</a>
         <a routerLink="/projects" class="nav-link" routerLinkActive="active" (click)="closeMobile()">Projects</a>
@@ -21,11 +17,24 @@
         <a routerLink="/cv" class="nav-link" routerLinkActive="active" (click)="closeMobile()">CV</a>
         <a routerLink="/contact" class="nav-link" routerLinkActive="active" (click)="closeMobile()">Contact</a>
       </div>
-      <button type="button" class="mobile-toggle" (click)="toggleMobile()" [attr.aria-expanded]="mobileOpen" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <app-theme-selector></app-theme-selector>
+        <button
+          type="button"
+          class="mobile-toggle"
+          [class.open]="mobileOpen"
+          (click)="toggleMobile()"
+          [attr.aria-expanded]="mobileOpen"
+          aria-controls="primary-nav"
+          aria-label="Menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
+
+  <div class="nav-backdrop" *ngIf="mobileOpen" (click)="closeMobile()" aria-hidden="true"></div>
 
   <main class="main-content" [@routeAnimations]="o?.activatedRouteData?.['animation']">
     <router-outlet #o="outlet"></router-outlet>

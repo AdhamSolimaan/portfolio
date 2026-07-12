@@ -480,7 +480,7 @@ section {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .hero-description {
@@ -495,22 +495,52 @@ section {
 
   .featured-grid {
     grid-template-columns: 1fr;
+    max-width: 520px;
   }
 
   .skills-layers {
     grid-template-columns: 1fr;
   }
+
+  .image-container {
+    max-width: 280px;
+  }
 }
 
 @media (max-width: 640px) {
   section {
-    padding: 3.5rem 1rem;
+    padding: 3rem 1rem;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-buttons,
+  .cta-buttons {
+    width: 100%;
   }
 
   .hero-buttons .btn-primary,
   .hero-buttons .btn-secondary,
   .cta-buttons .btn-primary,
-  .cta-buttons .btn-secondary {
+  .cta-buttons .btn-secondary,
+  .btn-demo {
     width: 100%;
+    justify-content: center;
+  }
+
+  .cta-content {
+    padding: 2rem 1.15rem;
+  }
+
+  .preview-body {
+    padding: 1.1rem 1.15rem 1.25rem;
+  }
+
+  .timeline {
+    padding-left: 1.1rem;
   }
 }

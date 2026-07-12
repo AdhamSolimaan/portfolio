@@ -98,9 +98,16 @@
 
 /* Mobile responsiveness */
 @media (max-width: 640px) {
+  .theme-toggle {
+    padding: 0.6rem;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
   .theme-dropdown {
-    right: -1rem;
-    left: -1rem;
-    min-width: auto;
+    right: 0;
+    left: auto;
+    min-width: 180px;
+    max-width: calc(100vw - 1.5rem);
   }
 } 

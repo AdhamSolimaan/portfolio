@@ -205,6 +205,7 @@ html[data-theme="white"] body {
 html, body {
   height: 100%;
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -218,6 +219,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.35s ease, color 0.35s ease;
   min-height: 100vh;
+  min-height: 100dvh;
+}
+
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -402,7 +417,26 @@ a:hover { color: var(--secondary-color); }
 
 @media (max-width: 768px) {
   .container { padding: 0 1rem; }
-  .btn, .btn-primary, .btn-secondary {
+
+  html[data-theme="pro-blue"] body,
+  html[data-theme="black"] body,
+  html[data-theme="white"] body,
+  body {
+    background-attachment: scroll !important;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary,
+  .cta-buttons .btn-primary,
+  .cta-buttons .btn-secondary,
+  .modal-actions .btn-primary,
+  .modal-actions .btn-secondary {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.85rem;
   }
 }

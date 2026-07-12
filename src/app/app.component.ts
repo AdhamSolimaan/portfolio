@@ -47,10 +47,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   toggleMobile(): void {
     this.mobileOpen = !this.mobileOpen;
+    document.body.classList.toggle('menu-open', this.mobileOpen);
   }
 
   closeMobile(): void {
     this.mobileOpen = false;
+    document.body.classList.remove('menu-open');
   }
 
   showNotification(message: string, type: 'success' | 'error' | 'info'): void {
