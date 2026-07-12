@@ -168,7 +168,7 @@ export class PortfolioService {
       role: 'Full Stack Engineer'
     },
     {
-      id: 6,
+      id: 5,
       title: 'SM - Service Management',
       company: 'NTG Clarity - Vodafone',
       description:
@@ -187,7 +187,7 @@ export class PortfolioService {
       role: 'Full Stack Engineer'
     },
     {
-      id: 7,
+      id: 6,
       title: 'VSM - Vodafone Service Management',
       company: 'NTG Clarity - Vodafone',
       description:
@@ -206,7 +206,7 @@ export class PortfolioService {
       role: 'Full Stack Engineer'
     },
     {
-      id: 8,
+      id: 7,
       title: 'Donation Platform',
       company: 'NTG Clarity (Internal)',
       description:
@@ -225,7 +225,7 @@ export class PortfolioService {
       role: 'Full Stack Engineer'
     },
     {
-      id: 9,
+      id: 8,
       title: 'To-Do List Application',
       company: 'NTG Clarity (Internal)',
       description:
@@ -244,7 +244,7 @@ export class PortfolioService {
       role: 'Full Stack Engineer'
     },
     {
-      id: 10,
+      id: 9,
       title: 'Task Management System',
       company: 'Sky Humans',
       description:
@@ -263,7 +263,7 @@ export class PortfolioService {
       role: 'Full Stack Engineer'
     },
     {
-      id: 11,
+      id: 10,
       title: 'Order & Customer Management',
       company: 'Sky Humans',
       description:
