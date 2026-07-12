@@ -41,6 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    document.body.classList.remove('menu-open');
     this.destroy$.next();
     this.destroy$.complete();
   }
